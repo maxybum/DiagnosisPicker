@@ -1,0 +1,190 @@
+[
+    {
+      "name": "First Template",
+      "items": [
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "A"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "B"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "C"
+            },
+            {
+              "name": "checkbox 4",
+              "code": "BB"
+            },
+            {
+              "name": "checkbox 5",
+              "code": "CC"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "code": "D",
+              "deselectAllIfSelected": true
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "E"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "F"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "G"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "H"
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "I"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "K"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "BBBB"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "CCCCC"
+            },
+            {
+              "name": "checkbox 4",
+              "code": "BBB"
+            },
+            {
+              "name": "checkbox 5",
+              "code": "CCC"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "L"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "M"
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "T"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "Q"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "R"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Second Template",
+      "items": [
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "A"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "B"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "C"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "code": "D",
+              "deselectAllIfSelected": true
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "E"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "F"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "G"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "H"
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "I"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "K"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "L"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "M"
+            }
+          ]
+        }
+      ]
+    }
+  ]
