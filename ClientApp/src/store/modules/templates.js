@@ -19,7 +19,6 @@ export const Templates = {
       state.templates.push(template);
     },
     deleteTemplate(state, template) {
-      console.log('eleteTemplate');
       const index = state.templates.indexOf(template);
       state.templates.splice(index, 1);
     }

@@ -1,11 +1,12 @@
 <template>
     <b-row>
-        <b-list-group>
+        <b-list-group >
             <b-list-group-item 
                 :active="templateIsActive(template)" 
                 v-for="template in templates" 
                 :key="template.name"
-                @click="selectTemplate(template)">
+                @click="selectTemplate(template)"
+                :variant="variant">
 
                 {{ template.name }}
 
@@ -28,6 +29,7 @@ import { mapState, mapMutations } from 'vuex';
 
 export default {
     name: 'TemplateSelect',
+    props: ["variant"],
     components: {
     },
     data() {

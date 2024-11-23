@@ -16,8 +16,9 @@
                   <b-form-checkbox
                     v-for="option in item.checkboxes"
                     :key="option.code"
-                    :value="option.code"
-                    @change="val => onChange(val, option.code)"
+                    :value="option"
+                    :checked.sync="option.checked"
+                    @change="val => onChange(val, option, item.checkboxes)"
                   >
                     <b-card-text>
                       <b>{{ option.code }}</b> - {{ option.name }}
@@ -75,7 +76,7 @@ export default {
             selectedTemplate: state => state.Templates.currentSelectedTemplate,
         }),
         displayData() {
-          return this.data.join(", ")
+          return this.data.map(m => m.code).join(", ")
         }
     },
     mounted() {
@@ -98,10 +99,30 @@ export default {
       copyToClipBoard(textToCopy){
         navigator.clipboard.writeText(textToCopy);      
       },
-      onChange(checked, code) {
-        // if(checked) {
-        //   this.data.push(code);
-        // }
+      removeOptionsIfSelected(options) {
+        options.forEach(opt => this.removeOptionIfSelected(opt));
+      },
+      removeOptionIfSelected(option) {
+        const index = this.data.indexOf(option);
+        console.log(option, index);
+        if (index > -1) { 
+          this.data.splice(index, 1); 
+        }
+      },
+      onChange(selected, option, allSectionOptions) {
+
+        var optionChecked = selected.indexOf(option) > -1;
+        if(optionChecked && option.deselectAllIfSelected) {
+          var optToremove = allSectionOptions.filter(f => !f.deselectAllIfSelected);
+          this.removeOptionsIfSelected(optToremove);
+        }
+
+        if(optionChecked && !option.deselectAllIfSelected) {
+          var optToremove = allSectionOptions.filter(f => f.deselectAllIfSelected);
+          console.log(optToremove);
+          this.removeOptionsIfSelected(optToremove);
+        }
+
 
         // if(!checked) {
         //   const index = this.data.indexOf(code);
