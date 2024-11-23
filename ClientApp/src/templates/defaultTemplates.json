@@ -1,187 +1,565 @@
 [
     {
-      "name": "First Template",
+      "name": "Права нижня кінцівка",
       "items": [
         {
-          "title": "Block title",
+          "title": "C клініка (clinical)",
           "checkboxes": [
             {
-              "name": "checkbox 1",
+              "name": "Немає видимих і пальпаторних ознак захворювань вен",
+              "code": "C0",
+              "deselectAllIfSelected": true
+            },
+            {
+              "name": "Телеангіоектазії (Тel) або (Ret) ретикулярні вени",
+              "code": "С1"
+            },
+            {
+              "name": "Варикозні вени",
+              "code": "С2"
+            },
+            {
+              "name": "Рецидив варикозних вен",
+              "code": "C2r"
+            },
+            {
+              "name": "Набряк",
+              "code": "С3"
+            },
+            {
+              "name": "Зміни шкіри та підшкірної клітковини в наслідок ХЗВ",
+              "code": "С4"
+            },
+            {
+              "name": "Пігментації або екзема",
+              "code": "С4a"
+            },
+            {
+              "name": "Ліподерматосклероз або біла атрофія",
+              "code": "С4b"
+            },
+            {
+              "name": "Флебектатична корона",
+              "code": "С4c"
+            },
+            {
+              "name": "Загоєна трофічна виразка",
+              "code": "С5"
+            },
+            {
+              "name": "Активна виразка",
+              "code": "С6"
+            },
+            {
+              "name": "Рецидив трофічної виразки",
+              "code": "С6r"
+            }
+          ]
+        },
+        {
+          "title": "Суб'єктивні симптоми ХЗВ",
+          "checkboxes": [
+            {
+              "name": "Немає суб'єктивних симптомів ХЗВ",
               "code": "A"
             },
             {
-              "name": "checkbox 2",
-              "code": "B"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "C"
-            },
-            {
-              "name": "checkbox 4",
-              "code": "BB"
-            },
-            {
-              "name": "checkbox 5",
-              "code": "CC"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
-              "code": "D",
-              "deselectAllIfSelected": true
-            }
-          ]
-        },
-        {
-          "title": "Block title",
-          "checkboxes": [
-            {
-              "name": "checkbox 1",
-              "code": "E"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "F"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "G"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
-              "deselectAllIfSelected": true,
-              "code": "H"
-            }
-          ]
-        },
-        {
-          "title": "Block title",
-          "checkboxes": [
-            {
-              "name": "checkbox 1",
-              "code": "I"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "K"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "BBBB"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "CCCCC"
-            },
-            {
-              "name": "checkbox 4",
-              "code": "BBB"
-            },
-            {
-              "name": "checkbox 5",
-              "code": "CCC"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "L"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
-              "deselectAllIfSelected": true,
-              "code": "M"
-            }
-          ]
-        },
-        {
-          "title": "Block title",
-          "checkboxes": [
-            {
-              "name": "checkbox 1",
-              "code": "T"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "Q"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "R"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
-              "deselectAllIfSelected": true,
+              "name": "Є суб'єктивні симптоми ХЗВ",
               "code": "S"
+            }
+          ]
+        },
+        {
+          "title": "E - етіологія (etiological)",
+          "checkboxes": [
+            {
+              "name": "Немає ідентіфікованих венозних причин",
+              "deselectAllIfSelected": true,
+              "code": "En"
+            },
+            {
+              "name": "Первинне захворювання",
+              "code": "Ep"
+            },
+            {
+              "name": "Вторинне захворювання",
+              "code": "Es"
+            },
+            {
+              "name": "Вторинне інтравазвльні",
+              "code": "Esi"
+            },
+            {
+              "name": "Вторинна екстравазальні",
+              "code": "Ese"
+            },
+            {
+              "name": "Вроджена",
+              "code": "Ec"
+            }
+          ]
+        },
+        {
+          "title": "A – анатомія (anatomical)",
+          "checkboxes": [
+            {
+              "name": "Немає змін у венозній системі",
+              "deselectAllIfSelected": true,
+              "code": "An"
+            },
+            {
+              "name": "Поверхневі вени",
+              "code": "As"
+            },
+            {
+              "name": "Глибокі вени",
+              "code": "Ad"
+            },
+            {
+              "name": "Перфорантні вени",
+              "code": "Ap"
+            }
+          ]
+        },
+        {
+          "title": "P - Патофізіологія ",
+          "checkboxes": [
+            {
+              "name": "Не виявлено венозної патології",
+              "deselectAllIfSelected": true,
+              "code": "Pn"
+            },
+            {
+              "name": "Потребує дообстеження",
+              "code": "P?"
+            },
+            {
+              "name": "Рефлюкс",
+              "code": "Pr"
+            },
+            {
+              "name": "Обструкція",
+              "code": "Po"
+            },
+            {
+              "name": "Рефлюкс і обструкція",
+              "code": "Pr, o"
+            }
+          ]
+        },
+        {
+          "title": "Поверхневі вени - S",
+          "checkboxes": [
+            {
+              "name": "Телеангіоектази",
+              "code": "Tel"
+            },
+            {
+              "name": "Ретикулярні вени",
+              "code": "Ret"
+            },
+            {
+              "name": "ВПВ вижче коліна",
+              "code": "GSVa"
+            },
+            {
+              "name": "ВПВ нижче коліна",
+              "code": "GSVb"
+            },
+            {
+              "name": "МПВ мала підшкірна вена",
+              "code": "SSV"
+            },
+            {
+              "name": "ПДСВ",
+              "code": "AASV"
+            },
+            {
+              "name": "Несафенні вени",
+              "code": "NSV"
+            }
+          ]
+        },
+        {
+          "title": "Перфорантні вени - p ",
+          "checkboxes": [
+          {
+            "name": "Перфоранти стегна",
+            "code": "TPV"
+          },
+          {
+            "name": "Перворанти гомілки",
+            "code": "CPV"
+          }
+          ]
+        },
+        {
+          "title": "Глибокі вени - d ",
+          "checkboxes": [
+            {
+              "name": "Нижня порожниста вена",
+              "code": "IVC"
+            },
+            {
+              "name": "Загальна клубова вена",
+              "code": "CIV"
+            },
+            {
+              "name": "Внутрішня клубова вена",
+              "code": "IIV"
+            },
+            {
+              "name": "Зовнішня клубова вена",
+              "code": "IIV"
+            },
+            {
+              "name": "Тазові вени",
+              "code": "PELV"
+            },
+            {
+              "name": "Загальна стегнова вена",
+              "code": "CFV"
+            },
+            {
+              "name": "Глибока вена стегна",
+              "code": "DFV"
+            },
+            {
+              "name": "Стегнова вена",
+              "code": "FV"
+            },
+            {
+              "name": "Підколінна вена",
+              "code": "POPV"
+            },
+            {
+              "name": "Гомілкові вени",
+              "code": "TIBV"
+            },
+            {
+              "name": "Малогомілкова вена",
+              "code": "PRV"
+            },
+            {
+              "name": "Передня великогомілкова вена",
+              "code": "ATV"
+            },
+            {
+              "name": "Задня великогомілкова вена",
+              "code": "PTV"
+            },
+            {
+              "name": "М'язові (суральні) вени",
+              "code": "MUSV"
+            },
+            {
+              "name": "Вени литкового м'яза",
+              "code": "GAV"
+            },
+            {
+              "name": "Вени камбалоподібного м'яза",
+              "code": "SOV"
+            }
+          ]
+        },
+        
+        {
+          "title": "Рівень діагностичних дій",
+          "checkboxes": [
+            {
+              "name": "Клінічне дослідження ± УЗД",
+              "code": "LI"
+            },
+            {
+              "name": "Клінічне дослідження + УЗАС ± плетизмографія",
+              "code": "LII"
+            },
+            {
+              "name": "Клінічне обстеження + УЗАС + флебографія, або флеботонометрія, або спіральна комп'ютерна томографія, або МРТ",
+              "code": "LIII"
             }
           ]
         }
       ]
     },
     {
-      "name": "Second Template",
+      "name": "Ліва нижня кінцівка",
       "items": [
         {
-          "title": "Block title",
+          "title": "C клініка (clinical)",
           "checkboxes": [
             {
-              "name": "checkbox 1",
+              "name": "Немає видимих і пальпаторних ознак захворювань вен",
+              "code": "C0",
+              "deselectAllIfSelected": true
+            },
+            {
+              "name": "Телеангіоектазії (Тel) або (Ret) ретикулярні вени",
+              "code": "С1"
+            },
+            {
+              "name": "Варикозні вени",
+              "code": "С2"
+            },
+            {
+              "name": "Рецидив варикозних вен",
+              "code": "C2r"
+            },
+            {
+              "name": "Набряк",
+              "code": "С3"
+            },
+            {
+              "name": "Зміни шкіри та підшкірної клітковини в наслідок ХЗВ",
+              "code": "С4"
+            },
+            {
+              "name": "Пігментації або екзема",
+              "code": "С4a"
+            },
+            {
+              "name": "Ліподерматосклероз або біла атрофія",
+              "code": "С4b"
+            },
+            {
+              "name": "Флебектатична корона",
+              "code": "С4c"
+            },
+            {
+              "name": "Загоєна трофічна виразка",
+              "code": "С5"
+            },
+            {
+              "name": "Активна виразка",
+              "code": "С6"
+            },
+            {
+              "name": "Рецидив трофічної виразки",
+              "code": "С6r"
+            }
+          ]
+        },
+        {
+          "title": "Суб'єктивні симптоми ХЗВ",
+          "checkboxes": [
+            {
+              "name": "Немає суб'єктивних симптомів ХЗВ",
               "code": "A"
             },
             {
-              "name": "checkbox 2",
-              "code": "B"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "C"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
-              "code": "D",
-              "deselectAllIfSelected": true
+              "name": "Є суб'єктивні симптоми ХЗВ",
+              "code": "S"
             }
           ]
         },
         {
-          "title": "Block title",
+          "title": "E - етіологія (etiological)",
           "checkboxes": [
             {
-              "name": "checkbox 1",
-              "code": "E"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "F"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "G"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
+              "name": "Немає ідентіфікованих венозних причин",
               "deselectAllIfSelected": true,
-              "code": "H"
+              "code": "En"
+            },
+            {
+              "name": "Первинне захворювання",
+              "code": "Ep"
+            },
+            {
+              "name": "Вторинне захворювання",
+              "code": "Es"
+            },
+            {
+              "name": "Вторинне інтравазвльні",
+              "code": "Esi"
+            },
+            {
+              "name": "Вторинна екстравазальні",
+              "code": "Ese"
+            },
+            {
+              "name": "Вроджена",
+              "code": "Ec"
             }
           ]
         },
         {
-          "title": "Block title",
+          "title": "A – анатомія (anatomical)",
           "checkboxes": [
             {
-              "name": "checkbox 1",
-              "code": "I"
-            },
-            {
-              "name": "checkbox 2",
-              "code": "K"
-            },
-            {
-              "name": "checkbox 3",
-              "code": "L"
-            },
-            {
-              "name": "deselectAllIfSelected checkbox 4",
+              "name": "Немає змін у венозній системі",
               "deselectAllIfSelected": true,
-              "code": "M"
+              "code": "An"
+            },
+            {
+              "name": "Поверхневі вени",
+              "code": "As"
+            },
+            {
+              "name": "Глибокі вени",
+              "code": "Ad"
+            },
+            {
+              "name": "Перфорантні вени",
+              "code": "Ap"
+            }
+          ]
+        },
+        {
+          "title": "P - Патофізіологія ",
+          "checkboxes": [
+            {
+              "name": "Не виявлено венозної патології",
+              "deselectAllIfSelected": true,
+              "code": "Pn"
+            },
+            {
+              "name": "Потребує дообстеження",
+              "code": "P?"
+            },
+            {
+              "name": "Рефлюкс",
+              "code": "Pr"
+            },
+            {
+              "name": "Обструкція",
+              "code": "Po"
+            },
+            {
+              "name": "Рефлюкс і обструкція",
+              "code": "Pr, o"
+            }
+          ]
+        },
+        {
+          "title": "Поверхневі вени - S",
+          "checkboxes": [
+            {
+              "name": "Телеангіоектази",
+              "code": "Tel"
+            },
+            {
+              "name": "Ретикулярні вени",
+              "code": "Ret"
+            },
+            {
+              "name": "ВПВ вижче коліна",
+              "code": "GSVa"
+            },
+            {
+              "name": "ВПВ нижче коліна",
+              "code": "GSVb"
+            },
+            {
+              "name": "МПВ мала підшкірна вена",
+              "code": "SSV"
+            },
+            {
+              "name": "ПДСВ",
+              "code": "AASV"
+            },
+            {
+              "name": "Несафенні вени",
+              "code": "NSV"
+            }
+          ]
+        },
+        {
+          "title": "Перфорантні вени - p ",
+          "checkboxes": [
+          {
+            "name": "Перфоранти стегна",
+            "code": "TPV"
+          },
+          {
+            "name": "Перворанти гомілки",
+            "code": "CPV"
+          }
+          ]
+        },
+        {
+          "title": "Глибокі вени - d ",
+          "checkboxes": [
+            {
+              "name": "Нижня порожниста вена",
+              "code": "IVC"
+            },
+            {
+              "name": "Загальна клубова вена",
+              "code": "CIV"
+            },
+            {
+              "name": "Внутрішня клубова вена",
+              "code": "IIV"
+            },
+            {
+              "name": "Зовнішня клубова вена",
+              "code": "IIV"
+            },
+            {
+              "name": "Тазові вени",
+              "code": "PELV"
+            },
+            {
+              "name": "Загальна стегнова вена",
+              "code": "CFV"
+            },
+            {
+              "name": "Глибока вена стегна",
+              "code": "DFV"
+            },
+            {
+              "name": "Стегнова вена",
+              "code": "FV"
+            },
+            {
+              "name": "Підколінна вена",
+              "code": "POPV"
+            },
+            {
+              "name": "Гомілкові вени",
+              "code": "TIBV"
+            },
+            {
+              "name": "Малогомілкова вена",
+              "code": "PRV"
+            },
+            {
+              "name": "Передня великогомілкова вена",
+              "code": "ATV"
+            },
+            {
+              "name": "Задня великогомілкова вена",
+              "code": "PTV"
+            },
+            {
+              "name": "М'язові (суральні) вени",
+              "code": "MUSV"
+            },
+            {
+              "name": "Вени литкового м'яза",
+              "code": "GAV"
+            },
+            {
+              "name": "Вени камбалоподібного м'яза",
+              "code": "SOV"
+            }
+          ]
+        },
+        
+        {
+          "title": "Рівень діагностичних дій",
+          "checkboxes": [
+            {
+              "name": "Клінічне дослідження ± УЗД",
+              "code": "LI"
+            },
+            {
+              "name": "Клінічне дослідження + УЗАС ± плетизмографія",
+              "code": "LII"
+            },
+            {
+              "name": "Клінічне обстеження + УЗАС + флебографія, або флеботонометрія, або спіральна комп'ютерна томографія, або МРТ",
+              "code": "LIII"
             }
           ]
         }
