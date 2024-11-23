@@ -104,7 +104,6 @@ export default {
     },
     watch: {
       renderTemplate(newVal) {
-        console.log("newVal", newVal);
         if(newVal === true) {
           this.$nextTick(() => {
             this.reCalculateContainerHeight();
@@ -115,7 +114,6 @@ export default {
     methods: {
       reCalculateContainerHeight() {
         var height = this.$refs.flexContainer.offsetHeight;
-        console.log(height, `${height / 3} px` );
         if(height > 0) {
           this.containerHeight = `${height / 3 + 100}px` 
         } else {
@@ -137,7 +135,6 @@ export default {
       },
       removeOptionIfSelected(option) {
         const index = this.data.indexOf(option);
-        console.log(option, index);
         if (index > -1) { 
           this.data.splice(index, 1); 
         }
@@ -152,17 +149,9 @@ export default {
 
         if(optionChecked && !option.deselectAllIfSelected) {
           var optToremove = allSectionOptions.filter(f => f.deselectAllIfSelected);
-          console.log(optToremove);
           this.removeOptionsIfSelected(optToremove);
         }
 
-
-        // if(!checked) {
-        //   const index = this.data.indexOf(code);
-        //   if (index > -1) { // only splice array when item is found
-        //     this.data.splice(index, 1); // 2nd parameter means remove one item only
-        //   }
-        // }
       }
     }
 }
