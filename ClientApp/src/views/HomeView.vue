@@ -5,17 +5,17 @@
 
 
     <b-row>
-      <b-col md="8" sm="12">
+      <b-col md="9" sm="12">
         <b-form-checkbox-group v-model="data" >
           <b-row class="">
-              <b-col v-for="item, index in selectedTemplate.items" :key="index" md="4" sm="12">
+              <b-col v-for="item, index in selectedTemplate.items" :key="index" md="4" sm="12" align-self="baseline">
                 <b-card
                   :title="item.title"
                   class="mb-2"
                 >
                   <b-form-checkbox
-                    v-for="option in item.checkboxes"
-                    :key="option.code"
+                    v-for="option, optIndex in item.checkboxes"
+                    :key="optIndex"
                     :value="option"
                     :checked.sync="option.checked"
                     @change="val => onChange(val, option, item.checkboxes)"
@@ -31,7 +31,7 @@
         </b-form-checkbox-group>
 
       </b-col>
-      <b-col md="2" class="d-none d-md-inline">
+      <b-col md="3" class="d-none d-md-inline">
         <TemplateSelect></TemplateSelect>
       </b-col>
     </b-row>
