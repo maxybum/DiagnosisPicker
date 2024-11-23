@@ -6,26 +6,26 @@
 
     <b-row>
       <b-col md="9" sm="12">
-        <b-form-checkbox-group v-model="data" >
-          <b-row class="">
-              <b-col v-for="item, index in selectedTemplate.items" :key="index" md="4" sm="12" align-self="baseline">
-                <b-card
-                  :title="item.title"
-                  class="mb-2"
-                >
-                  <b-form-checkbox
-                    v-for="option, optIndex in item.checkboxes"
-                    :key="optIndex"
-                    :value="option"
-                    :checked.sync="option.checked"
-                    @change="val => onChange(val, option, item.checkboxes)"
+        <b-form-checkbox-group v-model="data" v-if="renderTemplate">
+          <b-row ref="flexContainer" class="flex-md-column" :style="{maxHeight: !isMobile ? containerHeight : 'auto' }">
+              <b-col class="checkboxes-group px-1" v-for="item, index in selectedTemplate.items" :key="index" md="4" sm="12" align-self="baseline">
+                  <b-card
+                    :title="item.title"
+                    class="mb-2"
                   >
-                    <b-card-text>
-                      <b>{{ option.code }}</b> - {{ option.name }}
-                    </b-card-text>
-                  </b-form-checkbox>
+                  
+                    <b-form-checkbox
+                      v-for="option, optIndex in item.checkboxes"
+                      :key="optIndex"
+                      :value="option"
+                      @change="val => onChange(val, option, item.checkboxes)"
+                      class="d-flex"
+                      style="align-items: baseline;"
+                    >
+                        <div class="px-1"><b>{{ option.code }}</b> - {{ option.name }}</div>
 
-                </b-card>
+                    </b-form-checkbox>
+                  </b-card>               
               </b-col>
           </b-row>
         </b-form-checkbox-group>
@@ -68,7 +68,9 @@ export default {
     },
     data() {
       return {
-        data: []
+        data: [],
+        containerHeight: "auto",
+        renderTemplate: false
       }
     },
     computed: {
@@ -77,18 +79,49 @@ export default {
         }),
         displayData() {
           return this.data.map(m => m.code).join(", ")
+        },
+        isMobile() {
+          if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            return true
+          } else {
+            return false
+          }
         }
+        
     },
     mounted() {
       eventBus.$on('before-template-changed', () => {
+        this.renderTemplate = false;
+        this.containerHeight = "auto";
         this.setTemplateData({ key: this.selectedTemplate.name, data: this.data });
       });
 
       eventBus.$on('template-changed', () => {
-        this.$store.dispatch("TemplatesDataStore/getTemplateData", this.selectedTemplate.name).then(data => this.data = data);
+        this.$store.dispatch("TemplatesDataStore/getTemplateData", this.selectedTemplate.name).then(data => { this.data = data; this.renderTemplate = true; });
       });
+
+      this.renderTemplate = true;
+    },
+    watch: {
+      renderTemplate(newVal) {
+        console.log("newVal", newVal);
+        if(newVal === true) {
+          this.$nextTick(() => {
+            this.reCalculateContainerHeight();
+          });
+        }
+      }
     },
     methods: {
+      reCalculateContainerHeight() {
+        var height = this.$refs.flexContainer.offsetHeight;
+        console.log(height, `${height / 3} px` );
+        if(height > 0) {
+          this.containerHeight = `${height / 3 + 100}px` 
+        } else {
+          this.containerHeight = "auto";
+        }
+      },
       ...mapMutations({
         setTemplateData: 'TemplatesDataStore/setTemplateData'
       }),
@@ -134,3 +167,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.checkboxes-group{
+  position: inherit
+}
+</style>

@@ -3,7 +3,7 @@
 <template>
   <div>
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="dark" class="px-2">
+      <b-navbar toggleable="lg" type="dark" variant="dark" class="px-2" fixed="top">
         <b-navbar-brand href="#">DiagnosisPicker</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -23,7 +23,7 @@
       </b-navbar>
     </div>
 
-    <b-container fluid id="app" class="mx-0 pt-0 px-0">
+    <b-container fluid id="app" class="mx-0 pt-4 mt-2 px-0">
       <router-view />
     </b-container>
 
