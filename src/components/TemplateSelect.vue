@@ -4,11 +4,11 @@
             <b-list-group-item 
                 :active="templateIsActive(template)" 
                 v-for="template in templates" 
-                :key="template.name"
+                :key="template.id"
                 @click="selectTemplate(template)"
                 :variant="variant">
 
-                {{ template.name }}
+                <template v-if="template.namePrefix"> <b>{{ template.namePrefix }} </b> - </template>  {{ template.name }}
 
                 <b-button href="#" variant="danger" @click="removeTemplate(template)"> <b-icon-x/> </b-button>
 
@@ -34,7 +34,6 @@ export default {
     },
     data() {
       return {
-        data: []
       }
     },
     computed: {
@@ -61,11 +60,10 @@ export default {
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     try {
-                        var result = JSON.parse(e.target.result); // Парсимо JSON у об'єкт
-                        console.log("JSON завантажено:", result);
+                        var result = JSON.parse(e.target.result);
                         this.addTemplate(result);
                     } catch (error) {
-                        console.error("Помилка при обробці JSON:", error);
+                        console.error("Error JSON file loading:", error);
                     }
                 };
                 reader.readAsText(file);

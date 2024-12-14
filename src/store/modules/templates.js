@@ -1,13 +1,16 @@
 import Vue from 'vue';
 import { eventBus } from '@/main';
+import { generateTemplatesIds, generateTemplateIds } from '@/utils/templateIdsGenerator';
 import defaultTemplates from '@/templates/defaultTemplates.json'
+
+var defaultTemplatesWithIds = generateTemplatesIds(defaultTemplates);
 
 export const Templates = {
   namespaced: true,
 
   state: () => ({
-    templates: defaultTemplates,
-    currentSelectedTemplate: defaultTemplates[0]
+    templates: defaultTemplatesWithIds,
+    currentSelectedTemplate: defaultTemplatesWithIds[0]
   }),
   mutations: {
     setCurrentTemplate(state, template) {
@@ -16,7 +19,8 @@ export const Templates = {
       eventBus.$emit('template-changed');
     },
     addTemplate(state, template) {
-      state.templates.push(template);
+      var templateWithIds = generateTemplateIds(template);
+      state.templates.push(templateWithIds);
     },
     deleteTemplate(state, template) {
       const index = state.templates.indexOf(template);
