@@ -5,7 +5,7 @@
     "routes": [
       {
         "route": "/*",
-        "allowedRoles": [ "authenticated" ]
+        "allowedRoles": [ "diagnosis_picker_access" ]
       }
     ],
     "responseOverrides": {
