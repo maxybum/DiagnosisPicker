@@ -1,0 +1,72 @@
+
+    {
+      "name": "Third Template",
+      "items": [
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "A"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "B"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "C"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "code": "D",
+              "deselectAllIfSelected": true
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "E"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "F"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "G"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "H"
+            }
+          ]
+        },
+        {
+          "title": "Block title",
+          "checkboxes": [
+            {
+              "name": "checkbox 1",
+              "code": "I"
+            },
+            {
+              "name": "checkbox 2",
+              "code": "K"
+            },
+            {
+              "name": "checkbox 3",
+              "code": "L"
+            },
+            {
+              "name": "deselectAllIfSelected checkbox 4",
+              "deselectAllIfSelected": true,
+              "code": "M"
+            }
+          ]
+        }
+      ]
+    }
