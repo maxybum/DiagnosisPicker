@@ -19,6 +19,19 @@
 
           </b-navbar-nav>
 
+          <!-- Right aligned nav items -->
+          <b-navbar-nav v-if="userName" class="ml-auto">
+
+            <b-nav-item-dropdown right>
+                <!-- Using 'button-content' slot -->
+                <template #button-content>
+                  <em>{{ userName }}</em>
+                </template>
+                <b-dropdown-item v-for="role in userRoles" :key="role" href="#">{{ role }}</b-dropdown-item>
+              </b-nav-item-dropdown>
+
+          </b-navbar-nav>
+
         </b-collapse>
       </b-navbar>
     </div>
@@ -33,10 +46,25 @@
 
 <script>
 import TemplateSelect from '@/components/TemplateSelect.vue';
+import { mapState } from 'vuex';
 
 export default {
   components: {
     TemplateSelect
+  },
+  computed: {
+    ...mapState({
+        user: state => state.User.user,
+    }),
+    userName() {
+      return this.user?.userDetails ? this.user?.userDetails : "";
+    },
+    userRoles() {
+      return this.user?.userRoles ? this.user?.userRoles : [];
+    }
+  },
+  async mounted() {
+    await this.$store.dispatch('User/getUserInfo')
   }
 }
 
