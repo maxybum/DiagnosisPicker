@@ -7,7 +7,10 @@
     <b-row>
       <b-col md="9" sm="12">
         <b-form-checkbox-group v-model="selectedItems" v-if="renderTemplate">
-          <b-row ref="flexContainer" class="flex-md-column" :style="{maxHeight: !isMobile ? containerHeight : 'auto' }">
+          <b-row 
+            ref="flexContainer" class="flex-md-column flex-fill" 
+            :style="{maxHeight: !isMobile ? /*'auto'*/containerHeight : 'auto' }"
+            >
               <b-col class="checkboxes-group px-1" v-for="item in selectedTemplate.items" :key="item.id" md="4" sm="12" align-self="baseline">
                   <b-card
                     :title="item.title"
@@ -225,7 +228,7 @@ export default {
       reCalculateContainerHeight() {
         var height = this.$refs.flexContainer.offsetHeight;
         if(height > 0) {
-          this.containerHeight = `${height / 3 + 100}px` 
+          this.containerHeight = `${height / 3 + 150}px` 
         } else {
           this.containerHeight = "auto";
         }
