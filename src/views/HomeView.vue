@@ -6,33 +6,79 @@
 
     <b-row>
       <b-col md="9" sm="12">
-        <b-form-checkbox-group v-model="selectedItems" v-if="renderTemplate">
-          <b-row 
-            ref="flexContainer" class="flex-md-column flex-fill" 
-            :style="{maxHeight: !isMobile ? /*'auto'*/containerHeight : 'auto' }"
-            >
-              <b-col class="checkboxes-group px-1" v-for="item in selectedTemplate.items" :key="item.id" md="4" sm="12" align-self="baseline">
-                  <b-card
-                    :title="item.title"
-                    class="mb-2"
-                  >
-                  
-                    <b-form-checkbox
-                      v-for="option in item.checkboxes"
-                      :key="option.id"
-                      :value="option"
-                      @change="val => onChange(val, option, item.checkboxes)"
-                      class="d-flex"
-                      style="align-items: baseline;"
+        <div v-if="!hasLayoutSettings">
+          <b-form-checkbox-group v-model="selectedItems" v-if="renderTemplate">
+            <b-row 
+              ref="flexContainer" class="flex-md-column flex-fill" 
+              :style="{maxHeight: !isMobile ? /*'auto'*/containerHeight : 'auto' }"
+              >
+                <b-col class="checkboxes-group px-1" 
+                  v-for="item in selectedTemplate.items" 
+                  :key="item.id" md="4" sm="12" 
+                  align-self="baseline">
+                    <b-card
+                      :title="item.title"
+                      class="mb-2"
                     >
-                        <div class="px-1"><b>{{ option.code }}</b> - {{ option.name }}</div>
+                    
+                      <b-form-checkbox
+                        v-for="option in item.checkboxes"
+                        :key="option.id"
+                        :value="option"
+                        @change="val => onChange(val, option, item.checkboxes)"
+                        class="d-flex"
+                        style="align-items: baseline;"
+                      >
+                          <div class="px-1"><b>{{ option.code }}</b> - {{ option.name }}</div>
 
-                    </b-form-checkbox>
-                  </b-card>               
-              </b-col>
-          </b-row>
-        </b-form-checkbox-group>
+                      </b-form-checkbox>
+                    </b-card>               
+                </b-col>
+            </b-row>
+          </b-form-checkbox-group>
+        </div>
 
+        <div v-if="hasLayoutSettings">
+          <b-form-checkbox-group v-model="selectedItems">
+            <b-row class="flex-fill">
+                <b-col 
+                  v-for="colKey in layoutColumns"
+                  :key="colKey"
+                  :md="Math.round(12/layoutColumns.length)" 
+                  sm="12" 
+                  align-self="baseline">
+
+                  <b-row>
+                    <b-col class="checkboxes-group px-1" 
+                      v-for="item in selectedTemplate.items.filter(f => f.layoutKey == colKey).sort((a, b) => a.sortOrder - b.sortOrder)" 
+                      :key="item.id" 
+                      :md="12" 
+                      sm="12" 
+                      align-self="baseline">
+
+                        <b-card
+                          :title="item.title"
+                          class="mb-2"
+                        >
+                        
+                          <b-form-checkbox
+                            v-for="option in item.checkboxes"
+                            :key="option.id"
+                            :value="option"
+                            @change="val => onChange(val, option, item.checkboxes)"
+                            class="d-flex"
+                            style="align-items: baseline;"
+                          >
+                              <div class="px-1"><b>{{ option.code }}</b> - {{ option.name }}</div>
+
+                          </b-form-checkbox>
+                        </b-card>               
+                    </b-col>
+                  </b-row>
+                </b-col>           
+            </b-row>
+          </b-form-checkbox-group>
+        </div>
       </b-col>
       <b-col md="3" class="d-none d-md-inline">
         <TemplateSelect></TemplateSelect>
@@ -182,6 +228,15 @@ export default {
           if(!this.showTotalScoresSection) return;
 
           return this.totalScoresCalculated.filter(f => f.accepted).map(m => m.conditionDescription).join(', ');
+        },
+        layoutColumns() {
+          if(this.hasLayoutSettings)
+            return Object.keys(this.selectedTemplate?.layoutSettings);
+
+          return [];
+        },
+        hasLayoutSettings() {
+          return this.selectedTemplate?.layoutSettings != null && Object.keys(this.selectedTemplate?.layoutSettings).length > 0;
         }
     },
     mounted() {
