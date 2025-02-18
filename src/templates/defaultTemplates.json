@@ -1066,7 +1066,7 @@
       "items":[
          {
             "title":"Вік",
-            "layoutKey": "col3",
+            "layoutKey": "col1",
             "sortOrder": 10,
             "checkboxes":[
                {
@@ -1120,7 +1120,7 @@
          },
          {
             "title":"Недавні (протягом менше 1 місяця) події",
-            "layoutKey": "col3",
+            "layoutKey": "col2",
             "sortOrder": 1,
             "checkboxes":[
                {
@@ -1239,7 +1239,7 @@
          },
          {
             "title":"Рухова активність",
-            "layoutKey": "col2",
+            "layoutKey": "col3",
             "sortOrder": 2,
             "checkboxes":[
                {
