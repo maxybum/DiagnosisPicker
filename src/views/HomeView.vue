@@ -3,7 +3,6 @@
     
     <h1><template v-if="selectedTemplate.namePrefix">{{ selectedTemplate.namePrefix }} - </template> {{ selectedTemplate.name }} </h1>
 
-
     <b-row>
       <b-col md="9" sm="12">
         <div v-if="!hasLayoutSettings">
@@ -50,7 +49,7 @@
 
                   <b-row>
                     <b-col class="checkboxes-group px-1" 
-                      v-for="item in selectedTemplate.items.filter(f => f.layoutKey == colKey).sort((a, b) => a.sortOrder - b.sortOrder)" 
+                      v-for="item in selectedTemplate.items.filter(f => f.layoutKey == colKey)" 
                       :key="item.id" 
                       :md="12" 
                       sm="12" 
